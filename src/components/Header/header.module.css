@@ -1,0 +1,78 @@
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 64px;
+    width: 100vw;
+    background-color: rgba(var(--tmdbDarkBlue), 1);
+    transition: top 0.2s linear;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.naw_wrap {
+    display: flex;
+}
+.naw_wrapItem{
+    display: flex;
+    align-items: center;
+}
+
+.naw_wrap img {
+    height: 20px;
+}
+
+.header a {
+    color: var(--text-secondary);
+    margin-right: 14px;
+}
+
+.headerButton {
+    display: flex;
+    color: var(--text-secondary);
+    align-items: center
+}
+
+.headerButton div {
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+}
+.headerLanguage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 28px;
+    height: 26px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 3px 5px;
+    transition: linear .1s;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+.headerLanguage:hover{
+    cursor: pointer;
+    color: rgba(var(--tmdbDarkBlue), 1);
+    background-color: #fff;
+}
+
+.search {
+    width: 29px;
+    height: 29px;
+    background-image: url(https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1.svg);
+}

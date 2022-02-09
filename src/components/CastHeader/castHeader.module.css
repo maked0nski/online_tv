@@ -1,0 +1,29 @@
+.castHeader{
+    padding: 15px 40px;
+    background-image: linear-gradient(to right, rgba(31.5, 31.5, 52.5, 1) 150px, rgba(31.5, 31.5, 52.5, 0.84) 100%);
+}
+.castHeader a :hover{
+    color: rgba(218, 218, 218, 0.37);
+}
+.castHeader a {
+    color: white !important;
+}
+.castHeaderImg{
+    width: 58px;
+    height: 87px;
+}
+.headerInfoWrap{
+    display: flex;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.2rem;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}

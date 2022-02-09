@@ -1,0 +1,30 @@
+.card {
+    display: flex;
+    min-width: 138px;
+}
+
+.profImage {
+    width: 66px;
+    height: 66px;
+    border-radius: 4px;
+}
+
+.nameBlock {
+    padding: 10px;
+}
+
+.nameBlock p {
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.character {
+    font-size: 0.9em;
+}
+
+

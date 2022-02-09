@@ -1,0 +1,160 @@
+ul{
+    margin-block: 0 ;
+    padding-inline-start: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+li{
+    list-style-type: none;
+    margin-right: 20px;
+}
+.itemContainer{
+    background: linear-gradient(to bottom right, rgba(31.5, 31.5, 52.5, 1), rgba(31.5, 31.5, 52.5, 0.84));
+    border-bottom: 1px solid rgba(31.5, 31.5, 52.5, 1);
+    background-position: right -200px top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    color: var(--text-secondary);
+}
+.itemContainer2{
+    background-image: linear-gradient(to right, rgba(31.5, 31.5, 52.5, 1) 150px, rgba(31.5, 31.5, 52.5, 0.84) 100%);
+}
+.itemContent{
+
+}
+.poster{
+
+}
+.itemWraper{
+    padding: 30px 40px;
+    display: flex;
+}
+.itemInfo{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.certification{
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 0.06em 4px 0.15em 4px !important;
+    margin-right: 10px;
+}
+.release_date{
+    margin-right: 10px;
+}
+.genres{
+    display: flex;
+}
+.genres a{
+    margin-left: 5px;
+}
+.titleBlock{
+    margin-bottom: 24px;
+
+}
+.titleBlock h2{
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    font-size: 2.2rem;
+}
+.titleInfo{
+    display: flex;
+}
+
+.rating{
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 68px;
+}
+.rating .text{
+    font-weight: 700;
+    margin-left: 6px;
+    white-space: pre-line;
+}
+.circularProgressbar{
+    height: 60px;
+    width: 60px;
+}
+.toolBtn{
+
+}
+.toolBtnCircle{
+    box-sizing: border-box;
+    background: rgba(var(--tmdbDarkBlue), 1);
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.icon{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1em;
+    min-height: 1em;
+    width: 1em;
+    height: 1em;
+    line-height: inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: inherit;
+    box-sizing: border-box;
+}
+.video{
+
+}
+.videoLink{
+    color: var(--text-secondary);
+    border: none;
+    background: transparent;
+    width: auto;
+    height: auto;
+    font-weight: 600;
+    will-change: opacity;
+    transition: linear .1s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.videoLink span{
+    background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-175-play-806cb05551791b8dedd7f8d38fd3bd806e2d397fcfeaa00a5cc9129f0819fd07.svg");
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /*min-width: 1em;*/
+    /*min-height: 1em;*/
+    width: 1em;
+    height: 1em;
+    line-height: inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: invert(1);
+    box-sizing: border-box;
+    margin-right: 5px;
+    font-size: 1.4em;
+}
+
+
+.people_name{
+
+}

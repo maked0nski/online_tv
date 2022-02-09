@@ -1,0 +1,40 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 138px;
+    width: 138px;
+    margin: 10px 10px 10px 4px;
+    border: 1px solid rgba(227, 227, 277, 1);
+    padding-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profImage {
+    height: 175px;
+    width: 138px;
+}
+
+.nameBlock p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: black;
+}
+
+.name {
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.character {
+    font-size: 0.9em;
+    padding: 0 10px !important;
+}
+
+.nameBlock {
+    width: 90%;
+    margin: 0 auto;
+}

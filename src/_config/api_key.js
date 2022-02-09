@@ -1,0 +1,4 @@
+const api_key = 'f17b931df5527e2f6db41b98a4593b0a';
+const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMTdiOTMxZGY1NTI3ZTJmNmRiNDFiOThhNDU5M2IwYSIsInN1YiI6IjYxZmUzZTViNDgzMzNhMDBjMzk2MGE5MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5S7WyuRhWwy-GEkkMJEmv2pReOHEl1i8yucxeWABgCY';
+
+export {api_key, AUTH_TOKEN}
