@@ -30,7 +30,9 @@ li{
 
 }
 .itemWraper{
-    padding: 30px 40px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0;
     display: flex;
 }
 .itemInfo{
