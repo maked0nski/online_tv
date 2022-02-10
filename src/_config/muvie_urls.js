@@ -4,7 +4,8 @@ const baseURL = 'https://api.themoviedb.org/3';
 export const urls = {
     movie: '/movie',
     list: '/list',
-    discoverMovie: '/discover/movie'
+    discoverMovie: '/discover/movie',
+    youtubeLink: 'https://www.youtube.com/embed/'
 };
 
 export {baseURL}

@@ -1,18 +1,18 @@
 import React, {useEffect, useRef, useState} from 'react';
-
-import css from './movieDetails.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {Link, useParams} from "react-router-dom";
-import {getCreditsMovieItem, getMovieItem} from "../../store";
-import {ItemDetails} from "../../components";
-import {Cast} from "../../components";
+
+
+import css from './movieDetails.module.css'
+import {getCreditsMovieItem, getMovieItem, getTrailerMovieItem} from "../../store";
+import {ItemDetails, VideoFrame, Cast} from "../../components";
 
 const MovieDetails = () => {
 
-    const {movieItemDetails, credits, error, status} = useSelector(state => state['movieReducer']);
+    const {movieItemDetails, credits, trailer, error, status} = useSelector(state => state['movieReducer']);
     const {search: {language}} = useSelector(state => state['hrefSearchReducer']);
 
-    const {id,} = useParams();
+    const {id} = useParams();
 
     const dispatch = useDispatch();
 
@@ -21,21 +21,24 @@ const MovieDetails = () => {
     })
 
     useEffect(() => {
-        dispatch(getMovieItem({id, queryString}))
-        dispatch(getCreditsMovieItem({id: id + '/credits', queryString}))
+        dispatch(getMovieItem({id, queryString}));
+        dispatch(getCreditsMovieItem({id: id + '/credits', queryString}));
+        dispatch(getTrailerMovieItem({id: id + '/videos', queryString}));
+
     }, [language])
 
 
 // расщет количества актеров для прорисовки взависимости от ширини div
     const [widthBlock, setWidthBlock] = useState(0);
+    // const [count, setCount] = useState(0);
 
     const ref = useRef(null);
 
     useEffect(() => {
-        setWidthBlock(Math.floor((ref.current.offsetWidth) / 155) * 2)
+        // setWidthBlock(Math.floor((ref.current.offsetWidth) / 155) * 2)
+        setWidthBlock(ref.current.offsetWidth)
+        // setCount(Math.floor(widthBlock/155)*2)
     }, []);
-
-
 
 
     return (
@@ -43,7 +46,7 @@ const MovieDetails = () => {
             <div className={css.movieDetailsTitle}><h3>Детальніше про стрічку</h3></div>
             {status === "pending" && <h1>Data loading...</h1>}
             {error && <h2 className={'error'}>{error}</h2>}
-            {movieItemDetails && <ItemDetails movieItemDetails={movieItemDetails}  />}
+            {movieItemDetails && <ItemDetails movieItemDetails={movieItemDetails}/>}
 
 
             <div className={css.column_wrapper}>
@@ -52,8 +55,8 @@ const MovieDetails = () => {
                         <h3>У головних ролях</h3>
                         <div ref={ref} className={css.actors}>
                             {credits && credits.cast.map((item, index) => {
-                                if (index < widthBlock) {
-                                    return <Cast key={item.id} item={item} />
+                                if (index < (Math.floor(widthBlock/155)*2)) {
+                                    return <Cast key={item.id} item={item}/>
                                 }
                                 return
                             })}
@@ -62,7 +65,10 @@ const MovieDetails = () => {
                             <Link to={`cast`}><h4>Уся знімальна група й актори</h4></Link>
                         </div>
                         <hr/>
-
+                        <div className={css.videoPlayer}>
+                            {trailer?.id === Number(id) && trailer?.results.length > 0 &&
+                                <VideoFrame video={trailer?.results[0]} widthBlock={widthBlock} />}
+                        </div>
 
                     </div>
                     <div className={css.right_column}>
@@ -100,6 +106,8 @@ const MovieDetails = () => {
 
                     </div>
                 </div>
+
+
             </div>
 
         </div>

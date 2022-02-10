@@ -8,3 +8,4 @@ export * from './PopUpLanguage/PopUpLanguage';
 export * from './Cast/Cast';
 export * from './CastHeader/CastHeader';
 export * from './Person/Person';
+export * from './VideoFrame/VideoFrame';

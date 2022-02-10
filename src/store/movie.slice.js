@@ -35,6 +35,18 @@ export const getCreditsMovieItem = createAsyncThunk(
     }
 )
 
+export const getTrailerMovieItem = createAsyncThunk(
+    'movieSlice/getTrailerMovieItem',
+    async ({id, queryString}, {dispatch, rejectWithValue}) => {
+        try {
+            return await movieService.getMovieById({id,queryString})
+        } catch (e) {
+            rejectWithValue(e.message);
+        }
+    }
+)
+
+
 
 const movieSlice = createSlice({
     name: 'movieSlice',
@@ -42,6 +54,7 @@ const movieSlice = createSlice({
         movieList: [],
         movieItemDetails: undefined,
         credits: undefined,
+        trailer: undefined,
         error: null,
         status: null,
         scrollPosition: true
@@ -95,6 +108,21 @@ const movieSlice = createSlice({
             state.error = null;
         },
         [getCreditsMovieItem.rejected]: (state, action) => {
+            state.status = 'rejected';
+            state.error = action.payload;
+        },
+
+
+        [getTrailerMovieItem.pending]: (state) => {
+            state.status = 'pending';
+            state.error = null;
+        },
+        [getTrailerMovieItem.fulfilled]: (state, action) => {
+            state.status = 'fulfilled';
+            state.trailer = action.payload;
+            state.error = null;
+        },
+        [getTrailerMovieItem.rejected]: (state, action) => {
             state.status = 'rejected';
             state.error = action.payload;
         }

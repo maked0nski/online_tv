@@ -106,20 +106,13 @@ const ItemDetails = ({movieItemDetails}) => {
                                     <div className={css.people_name}>
 
                                     </div>
-
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div className={'ActorsList'}>
-
-            </div>
-        </>
+       </>
     );
 };
 

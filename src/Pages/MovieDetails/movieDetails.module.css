@@ -39,21 +39,26 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .actors, .allActors a:hover {
     color: rgba(0, 0, 0, 0.37);
 }
-.social_links{
+
+.social_links {
     display: flex;
     margin-top: 10px;
     margin-bottom: 30px;
 }
-.blockInfo p{
+
+.blockInfo p {
     margin: 0;
 }
-.blockInfo h4{
+
+.blockInfo h4 {
     margin-block-end: 0.33em;
 }
-.social_links span{
+
+.social_links span {
     margin-right: 10px;
     position: relative;
     top: 0;
@@ -70,4 +75,8 @@
     background-repeat: no-repeat;
     color: inherit;
     box-sizing: border-box;
+}
+
+.videoPlayer {
+    width: 100%;
 }
