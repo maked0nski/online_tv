@@ -59,22 +59,22 @@
 }
 
 .social_links span {
-    margin-right: 10px;
-    position: relative;
-    top: 0;
-    left: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 2em;
-    min-height: 2em;
-    width: 2em;
-    height: 2em;
-    line-height: inherit;
-    background-position: center center;
-    background-repeat: no-repeat;
-    color: inherit;
-    box-sizing: border-box;
+    /*margin-right: 10px;*/
+    /*position: relative;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*display: inline-flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*min-width: 2em;*/
+    /*min-height: 2em;*/
+    /*width: 2em;*/
+    /*height: 2em;*/
+    /*line-height: inherit;*/
+    /*background-position: center center;*/
+    /*background-repeat: no-repeat;*/
+    /*color: inherit;*/
+    /*box-sizing: border-box;*/
 }
 
 .videoPlayer {

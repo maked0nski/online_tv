@@ -1,5 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {movieService} from "../services";
+import {switchScrollPosition} from "./hrefSearch.slice";
+
 
 export const getMovieList = createAsyncThunk(
     'movieSlice/getMovieList',
@@ -13,11 +15,34 @@ export const getMovieList = createAsyncThunk(
     }
 )
 
+export const getTVList = createAsyncThunk(
+    'movieSlice/getTVList',
+    async (queryString, {rejectWithValue}) => {
+        try {
+            switchScrollPosition()
+            return await movieService.getDiscoverTV(queryString);
+        } catch (e) {
+            rejectWithValue(e.message);
+        }
+    }
+)
+
 export const getMovieItem = createAsyncThunk(
     'movieSlice/getMovieItem',
-    async ({id, queryString}, {dispatch, rejectWithValue}) => {
+    async ({id, queryString}, {rejectWithValue}) => {
         try {
-            return await movieService.getMovieById({id,queryString})
+            return await movieService.getMovieById({id, queryString})
+        } catch (e) {
+            rejectWithValue(e.message);
+        }
+    }
+)
+
+export const getTvItem = createAsyncThunk(
+    'movieSlice/getTvItem',
+    async ({id, queryString}, {rejectWithValue}) => {
+        try {
+            return await movieService.getTvById({id, queryString})
         } catch (e) {
             rejectWithValue(e.message);
         }
@@ -26,9 +51,20 @@ export const getMovieItem = createAsyncThunk(
 
 export const getCreditsMovieItem = createAsyncThunk(
     'movieSlice/getCreditsMovieItem',
-    async ({id, queryString}, {dispatch, rejectWithValue}) => {
+    async ({id, queryString}, {rejectWithValue}) => {
         try {
-            return await movieService.getMovieById({id,queryString})
+            return await movieService.getMovieById({id, queryString})
+        } catch (e) {
+            rejectWithValue(e.message);
+        }
+    }
+)
+
+export const getCreditsTvItem = createAsyncThunk(
+    'movieSlice/getCreditsTvItem',
+    async ({id, queryString}, {rejectWithValue}) => {
+        try {
+            return await movieService.getTvById({id, queryString})
         } catch (e) {
             rejectWithValue(e.message);
         }
@@ -37,9 +73,19 @@ export const getCreditsMovieItem = createAsyncThunk(
 
 export const getTrailerMovieItem = createAsyncThunk(
     'movieSlice/getTrailerMovieItem',
-    async ({id, queryString}, {dispatch, rejectWithValue}) => {
+    async ({id, queryString}, {rejectWithValue}) => {
         try {
-            return await movieService.getMovieById({id,queryString})
+            return await movieService.getMovieById({id, queryString})
+        } catch (e) {
+            rejectWithValue(e.message);
+        }
+    }
+)
+export const getTrailerTvItem = createAsyncThunk(
+    'movieSlice/getTrailerTvItem',
+    async ({id, queryString}, {rejectWithValue}) => {
+        try {
+            return await movieService.getTvById({id, queryString})
         } catch (e) {
             rejectWithValue(e.message);
         }
@@ -47,17 +93,19 @@ export const getTrailerMovieItem = createAsyncThunk(
 )
 
 
-
 const movieSlice = createSlice({
     name: 'movieSlice',
     initialState: {
         movieList: [],
+        tvList: [],
         movieItemDetails: undefined,
+        tvItemDetails: undefined,
         credits: undefined,
         trailer: undefined,
         error: null,
         status: null,
-        scrollPosition: true
+        scrollPosition: true,
+        scrollTVPosition: true
     },
     reducers: {
         addMovieElement: (state, action) => {
@@ -65,6 +113,9 @@ const movieSlice = createSlice({
         },
         switchScrollPosition: (state, action) => {
             state.scrollPosition = action.payload
+        },
+        switchScrollTVPosition: (state, action) => {
+            state.scrollTVPosition = action.payload
         }
     },
     extraReducers: {
@@ -78,6 +129,21 @@ const movieSlice = createSlice({
             state.error = null;
         },
         [getMovieList.rejected]: (state, action) => {
+            state.status = 'rejected';
+            state.error = action.payload;
+        },
+
+
+        [getTVList.pending]: (state) => {
+            state.status = 'pending';
+            state.error = null;
+        },
+        [getTVList.fulfilled]: (state, action) => {
+            state.status = 'fulfilled';
+            state.tvList = [...state.tvList, ...action.payload.results];
+            state.error = null;
+        },
+        [getTVList.rejected]: (state, action) => {
             state.status = 'rejected';
             state.error = action.payload;
         },
@@ -98,6 +164,21 @@ const movieSlice = createSlice({
         },
 
 
+        [getTvItem.pending]: (state) => {
+            state.status = 'pending';
+            state.error = null;
+        },
+        [getTvItem.fulfilled]: (state, action) => {
+            state.status = 'fulfilled';
+            state.tvItemDetails = action.payload;
+            state.error = null;
+        },
+        [getTvItem.rejected]: (state, action) => {
+            state.status = 'rejected';
+            state.error = action.payload;
+        },
+
+
         [getCreditsMovieItem.pending]: (state) => {
             state.status = 'pending';
             state.error = null;
@@ -113,6 +194,23 @@ const movieSlice = createSlice({
         },
 
 
+
+        [getCreditsTvItem.pending]: (state) => {
+            state.status = 'pending';
+            state.error = null;
+        },
+        [getCreditsTvItem.fulfilled]: (state, action) => {
+            state.status = 'fulfilled';
+            state.credits = action.payload;
+            state.error = null;
+        },
+        [getCreditsTvItem.rejected]: (state, action) => {
+            state.status = 'rejected';
+            state.error = action.payload;
+        },
+
+
+
         [getTrailerMovieItem.pending]: (state) => {
             state.status = 'pending';
             state.error = null;
@@ -125,6 +223,20 @@ const movieSlice = createSlice({
         [getTrailerMovieItem.rejected]: (state, action) => {
             state.status = 'rejected';
             state.error = action.payload;
+        },
+
+        [getTrailerTvItem.pending]: (state) => {
+            state.status = 'pending';
+            state.error = null;
+        },
+        [getTrailerTvItem.fulfilled]: (state, action) => {
+            state.status = 'fulfilled';
+            state.trailer = action.payload;
+            state.error = null;
+        },
+        [getTrailerTvItem.rejected]: (state, action) => {
+            state.status = 'rejected';
+            state.error = action.payload;
         }
     }
 })
@@ -132,6 +244,6 @@ const movieSlice = createSlice({
 const movieReducer = movieSlice.reducer;
 
 
-export const {addMovieElement, switchScrollPosition} = movieSlice.actions;
+export const {addMovieElement, switchScrollTVPosition} = movieSlice.actions;
 
 export default movieReducer;

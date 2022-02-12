@@ -1,0 +1,40 @@
+.cardWrap {
+
+}
+
+.card {
+    margin-top: 30px;
+    width: 235px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border: 1px solid rgba(227, 227, 227, 1);
+}
+
+.image a img {
+    width: 235px;
+    height: 235px;
+}
+
+.name {
+    padding: 8px 10px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.name p {
+    line-height: 1.2em;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+}
+.name p a{
+    color: black;
+}
+.name p a:hover{
+    color: rgba(0, 0, 0, 0.56);
+}

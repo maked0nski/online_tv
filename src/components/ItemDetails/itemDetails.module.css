@@ -29,6 +29,10 @@ li{
 .poster{
 
 }
+.poster img {
+    width: 300px;
+    height: 450px;
+}
 .itemWraper{
     width: 90%;
     margin: 0 auto;

@@ -4,12 +4,18 @@ import {Link} from "react-router-dom";
 import css from "./itemDetails.module.css";
 import {Genres} from "../Genres/Genres";
 import {buildStyles, CircularProgressbar} from "react-circular-progressbar";
+import {defaultImage} from "../../_config";
 
 
 const ItemDetails = ({movieItemDetails}) => {
 
-    const {backdrop_path, poster_path, title, release_date, genres, vote_average, overview} = movieItemDetails;
-    const year = "(" + release_date.split('-', 1) + ")"
+    const {backdrop_path, poster_path, title, name, release_date, first_air_date, genres, vote_average, overview} = movieItemDetails;
+
+    const year = () => {
+        if (release_date){
+            return ("(" + release_date.split('-', 1) + ")")
+        } else return ("(" + first_air_date.split('-', 1) + ")")
+    }
 
 
 
@@ -24,16 +30,19 @@ const ItemDetails = ({movieItemDetails}) => {
                         <div className={css.itemWraper}>
                             <div className={css.poster}>
                                 <img src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${poster_path}`}
-                                     alt={title}/>
+                                     alt={title ? title : name}
+                                     onError={(e)=>{e.target.onerror = null; e.target.src=defaultImage}}
+                                />
                             </div>
                             <div className={css.itemInfo}>
                                 <div className={css.titleBlock}>
-                                    <h2>{title} <span
-                                        className={'releaseDate'}>{year}</span>
+                                    <h2>{title ? title : name}
+                                        {<span className={'releaseDate'}>{year}</span>}
                                     </h2>
                                     <div className={css.titleInfo}>
                                         <div className={css.certification}>12+</div>
-                                        <div className={css.release_date}>{release_date.split('-').join('/')}</div>
+                                        <div className={css.release_date}>{release_date && release_date.split('-').join('/')}</div>
+                                        <div className={css.release_date}>{first_air_date && first_air_date.split('-').join('/')}</div>
                                         <div className={css.genres}>* {genres.map(genre => <Genres key={genre.id}
                                                                                                    genre={genre}/>)}</div>
                                     </div>
@@ -85,12 +94,13 @@ const ItemDetails = ({movieItemDetails}) => {
                                                   style={{backgroundImage: 'url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-49-star-white-5c85220678b312aea9599d5f12ad858a9e7df226de51ef8b6b699023ffeda5fa.svg")'}}></span>
                                         </Link>
                                     </li>
-                                    <li className={css.video}>
-                                        <Link className={css.videoLink} to={'#'}>
-                                            <span></span>
-                                            Відтворити трейлер
-                                        </Link>
-                                    </li>
+                                    {/*<li className={css.video}>*/}
+                                    {/*    <Link className={css.videoLink} to={'#videoPlayer'}>*/}
+                                    {/*        <span></span>*/}
+
+                                    {/*        Відтворити трейлер*/}
+                                    {/*    </Link>*/}
+                                    {/*</li>*/}
 
 
                                 </ul>
@@ -112,7 +122,7 @@ const ItemDetails = ({movieItemDetails}) => {
                     </div>
                 </div>
             </div>
-       </>
+        </>
     );
 };
 

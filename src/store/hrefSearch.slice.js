@@ -1,5 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
+
 const hrefSearchSlice = createSlice({
     name: 'hrefSearchSlice',
     initialState: {
@@ -7,20 +8,28 @@ const hrefSearchSlice = createSlice({
             language: 'uk-UA',
             sort_by: 'popularity.desc',
             page: 1,
-            with_genres: ''
-        }
+            pageTv: 1,
+            pagePerson: 1,
+            with_genres: '',
+
+        },
+        scrollPosition: true,
     },
     reducers: {
         setParams: (state, action) => {
             state.search = {...state.search, ...action.payload}
-        }
+            console.log()
+        },
+        switchScrollPosition: (state, action) => {
+            state.scrollPosition = action.payload
+        },
     }
 })
 
 
 const hrefSearchReducer = hrefSearchSlice.reducer;
 
-export const {setParams} = hrefSearchSlice.actions;
+export const {setParams, switchScrollPosition} = hrefSearchSlice.actions;
 
 
 export default hrefSearchReducer

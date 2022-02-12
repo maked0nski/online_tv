@@ -11,8 +11,9 @@
     max-width: calc(1400px - 80px - 260px - 30px);
 }
 
-.image {
-
+.image a img{
+    width: 220px;
+    height: 330px;
 }
 
 .content {

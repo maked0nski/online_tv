@@ -19,11 +19,12 @@ const PopUpLanguage = () => {
     const onchange = (data) => {
         dispatch(setParams(data))
         ref.current.close();
+
     }
-    let languageLable = language.split('-', 1)
+    let languageLabel = language.split('-', 1)
 
     return (
-        <Popup className={css.languagePopup} ref={ref} trigger={<span>{languageLable}</span>} position="bottom center">
+        <Popup className={css.languagePopup} ref={ref} trigger={<span>{languageLabel}</span>} position="bottom center">
             <div className={css.popupContainer} style={{padding:'10px'}}>
                 <h2 style={{fontSize: '1.3em',margin: '0 0 10px 0', textAlign:'center'}}>Оберіть мову</h2>
                 <form onChange={handleSubmit(onchange)}>
