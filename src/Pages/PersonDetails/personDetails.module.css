@@ -1,18 +1,59 @@
 .wraper{
-
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+    padding-block: 30px;
 }
 .leftwrap{
+    min-width: 300px;
+    width: 300px;
+}
+.infoTitle{
+    font-weight: 600;
+    font-size: 1.3em;
+}
+.infoBlock{
+    margin-block: 25px;
+}
+.infoBlock div{
+    font-weight: 600;
+    font-size: 1em;
+}
+.infoBlock p{
+    margin: 0;
+    font-weight: 400;
+    font-size: 1em;
+}
 
+.rightwrap{
+    max-width: 920px;
+    width: calc(100vw - 80px - 300px);
+    padding-left: 30px;
+}
+.biography{
+    text-align: justify;
+}
+.listMovie{
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border: 1px solid rgba(227,227,227, 1);
+    padding: 10px;
 }
 .image{
     width: 300px;
     height: 450px;
+
+}
+.image img{
     border-radius: 8px;
 }
 .social_links{
+    margin-block: 30px;
     display: flex;
 }
 .also_known_as{
     flex-direction: column;
     align-items: flex-start
+}
+.also_known_as li{
+    margin-block: 5px;
 }

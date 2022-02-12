@@ -23,7 +23,6 @@ const MainTv = () => {
         if (scrollTVPosition) {
             dispatch(setParams({pageTv: pageTv + 1}));
             dispatch(getTVList(queryString));
-            console.log(queryString.toString())
         }
         dispatch(switchScrollTVPosition(false))
     }, [scrollTVPosition, language])
@@ -42,7 +41,6 @@ const MainTv = () => {
         }
     }
 
-    console.log(language)
 
     return (
         <div className={css.content_wrapper}>

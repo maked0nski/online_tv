@@ -18,7 +18,7 @@ const PersonsPage = () => {
         sort_by,
         page: pagePerson
     })
-    console.log(queryString.toString())
+
     useEffect(() => {
         if (scrollPersPosition) {
             dispatch(setParams({pagePerson: pagePerson + 1}));

@@ -14,4 +14,5 @@ export * from './PersonComponent/PersonImage/PersonImage';
 export * from './SocialLinks/SocialLinks';
 export * from './PersonComponent/Birthday/Birthday';
 export * from './PersonComponent/AlsoKnownAs/AlsoKnownAs';
+export * from './ListMovie/ListMovie';
 

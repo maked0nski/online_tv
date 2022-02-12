@@ -18,7 +18,6 @@ const hrefSearchSlice = createSlice({
     reducers: {
         setParams: (state, action) => {
             state.search = {...state.search, ...action.payload}
-            console.log()
         },
         switchScrollPosition: (state, action) => {
             state.scrollPosition = action.payload

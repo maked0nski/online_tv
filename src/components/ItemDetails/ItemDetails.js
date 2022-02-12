@@ -9,14 +9,22 @@ import {defaultImage} from "../../_config";
 
 const ItemDetails = ({movieItemDetails}) => {
 
-    const {backdrop_path, poster_path, title, name, release_date, first_air_date, genres, vote_average, overview} = movieItemDetails;
+    const {
+        backdrop_path,
+        poster_path,
+        title,
+        name,
+        release_date,
+        first_air_date,
+        genres,
+        vote_average,
+        overview
+    } = movieItemDetails;
 
-    const year = () => {
-        if (release_date){
-            return ("(" + release_date.split('-', 1) + ")")
-        } else return ("(" + first_air_date.split('-', 1) + ")")
-    }
-
+    let year;
+    if (release_date) {
+        year = ("(" + release_date.split('-', 1) + ")")
+    } else year = ("(" + first_air_date.split('-', 1) + ")")
 
 
     return (
@@ -31,7 +39,10 @@ const ItemDetails = ({movieItemDetails}) => {
                             <div className={css.poster}>
                                 <img src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${poster_path}`}
                                      alt={title ? title : name}
-                                     onError={(e)=>{e.target.onerror = null; e.target.src=defaultImage}}
+                                     onError={(e) => {
+                                         e.target.onerror = null;
+                                         e.target.src = defaultImage
+                                     }}
                                 />
                             </div>
                             <div className={css.itemInfo}>
@@ -41,8 +52,10 @@ const ItemDetails = ({movieItemDetails}) => {
                                     </h2>
                                     <div className={css.titleInfo}>
                                         <div className={css.certification}>12+</div>
-                                        <div className={css.release_date}>{release_date && release_date.split('-').join('/')}</div>
-                                        <div className={css.release_date}>{first_air_date && first_air_date.split('-').join('/')}</div>
+                                        <div
+                                            className={css.release_date}>{release_date && release_date.split('-').join('/')}</div>
+                                        <div
+                                            className={css.release_date}>{first_air_date && first_air_date.split('-').join('/')}</div>
                                         <div className={css.genres}>* {genres.map(genre => <Genres key={genre.id}
                                                                                                    genre={genre}/>)}</div>
                                     </div>

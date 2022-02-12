@@ -1,0 +1,7 @@
+.listElement {
+    margin-block: 10px;
+}
+
+.listElement a:hover {
+    color: rgba(0, 0, 0, 0.37);
+}
