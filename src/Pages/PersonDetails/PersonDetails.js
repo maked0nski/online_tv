@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import {getPersonCombined_credits, getPersonItem, getPersonMoreInfo} from "../../store";
 import {AlsoKnownAs, Birthday, ListMovie, PersonImage, SocialLinks} from "../../components";
+import {FormattedMessage} from "react-intl";
 
 
 const PersonDetails = () => {
@@ -34,30 +35,30 @@ const PersonDetails = () => {
                         {moreInfo && <SocialLinks moreInfo={moreInfo}/>}
                     </div>
                     <div className={css.infoTitle}>
-                        Особиста інформація
+                        <FormattedMessage id='personalInfo' />
                     </div>
                     <div className={css.infoBlock}>
-                        <div>Кількість зйомок</div>
+                        <div><FormattedMessage id='knownCredits' /></div>
                         {combined_credits && <p>{combined_credits.cast.length}</p>}
                     </div>
                     <div className={css.infoBlock}>
-                        <div>Стать</div>
-                        {personItem && <p>{personItem.gender === 2 ? 'чоловіча' : 'жіноча'}</p>}
+                        <div><FormattedMessage id='gender' /></div>
+                        {personItem && <p>{personItem.gender === 2 ? <FormattedMessage id='male' /> : <FormattedMessage id='female' />}</p>}
                     </div>
                     <div className={css.infoBlock}>
-                        <div>День народження</div>
+                        <div><FormattedMessage id='birthday' /></div>
                         {personItem && <Birthday birthday={personItem.birthday}/>}
                     </div>
                     <div className={css.infoBlock}>
-                        <div>Місце народження</div>
+                        <div><FormattedMessage id='placeBirth' /></div>
                         <p>{personItem && personItem.place_of_birth}</p>
                     </div>
                     {personItem?.deathday && <div className={css.infoBlock}>
-                        <div>Дата смерті</div>
+                        <div><FormattedMessage id='dateDeath' /></div>
                         <Birthday birthday={personItem.deathday}/>
                     </div>}
                     <div className={css.infoBlock}>
-                        <div>Також відомий як:</div>
+                        <div><FormattedMessage id='alsoKnownAs' /></div>
                         {personItem?.also_known_as &&
                             <ul className={css.also_known_as}>
                                 {personItem?.also_known_as.map((value, index) => <AlsoKnownAs key={index}
@@ -71,11 +72,11 @@ const PersonDetails = () => {
                 <div className={css.rightwrap}>
                     <h2>{personItem.name}</h2>
                     <div className={css.biography}>
-                        <h3>Біографія</h3>
+                        <h3><FormattedMessage id='biography' /></h3>
                         <div>{personItem.biography}</div>
                     </div>
                     <div>
-                        <h3>Виконував ролі у фільмах:</h3>
+                        <h3><FormattedMessage id='acting' /></h3>
                         <div className={css.listMovie}>
                             {combined_credits.cast.map(value => <ListMovie key={value.credit_id} value={value}/>)}
 

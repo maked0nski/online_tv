@@ -1,0 +1,37 @@
+{
+  "movie": "Movie",
+  "tvShows": "TV Shows",
+  "actors": "Actors",
+  "chooseLanguage": "Choose a language",
+  "popularMovies": "Popular movies",
+  "popularTv": "Popular TV",
+  "downloadMore" : "Download more",
+  "moreAboutTape": "More about the tape",
+  "ratingUsers": "User rating",
+  "description": "Description",
+  "starring": "Starring",
+  "originalTitle": "Original title",
+  "status": "Status",
+  "released": "Released",
+  "notReleased": "Not released",
+  "originalLang": "The language of the original",
+  "budget": "Budget",
+  "income": "Income",
+  "crewAndActors": "The whole film crew and actors",
+  "biography": "Biography",
+  "personalInfo": "Personal Info",
+  "knownCredits": "Known Credits",
+  "gender": "Gender",
+  "male": "Male",
+  "female": "Female",
+  "birthday": "Birthday",
+  "placeBirth": "Place of Birth",
+  "alsoKnownAs": "Also Known As:",
+  "acting": "Acting",
+
+
+  "descriptions": {
+    "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
+    "part2": "Switch language between english and russian using buttons above."
+  }
+}

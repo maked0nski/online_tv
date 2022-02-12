@@ -17,11 +17,11 @@ const Person = ({item}) => {
 
     return (
         <div className={css.card}>
-            <Link to={'#'}>
+            <Link to={`/person/${id}`}>
                 <img className={css.profImage} src={src} alt={name}/>
             </Link>
             <div className={css.nameBlock}>
-                <Link to={'#'}>
+                <Link to={`/person/${id}`}>
                     <p className={css.name}>{name}</p>
                     <p className={css.character}>{character}</p>
                 </Link>

@@ -7,6 +7,7 @@ import {NavLink} from "react-router-dom";
 import {Avatar} from "@mui/material";
 import {deepPurple} from "@mui/material/colors";
 import {PopUpLanguage} from "../PopUpLanguage/PopUpLanguage";
+import {FormattedMessage} from "react-intl";
 
 const Header = () => {
     return (
@@ -22,9 +23,11 @@ const Header = () => {
                         </NavLink>
                     </div>
                     <div className={css.naw_wrapItem}>
-                        <NavLink to={'/movie'}>Фільми</NavLink>
-                        <NavLink to={'/tv'}>Серіали</NavLink>
-                        <NavLink to={'/person'}>Актори</NavLink>
+                        <NavLink to={'/movie'}>
+                            <FormattedMessage id='movie' />
+                        </NavLink>
+                        <NavLink to={'/tv'}><FormattedMessage id='tvShows' /></NavLink>
+                        <NavLink to={'/person'}><FormattedMessage id='actors' /></NavLink>
                     </div>
                 </div>
                 <div className={css.headerButton}>

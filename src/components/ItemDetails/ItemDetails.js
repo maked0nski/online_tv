@@ -5,6 +5,7 @@ import css from "./itemDetails.module.css";
 import {Genres} from "../Genres/Genres";
 import {buildStyles, CircularProgressbar} from "react-circular-progressbar";
 import {defaultImage} from "../../_config";
+import {FormattedMessage} from "react-intl";
 
 
 const ItemDetails = ({movieItemDetails}) => {
@@ -77,7 +78,7 @@ const ItemDetails = ({movieItemDetails}) => {
                                                 textSize: '25px'
                                             })}
                                         />
-                                        <div className={css.text}>Оцінка<br/>користувачів</div>
+                                        <div className={css.text}><FormattedMessage id='ratingUsers'/></div>
 
 
                                     </li>
@@ -120,7 +121,7 @@ const ItemDetails = ({movieItemDetails}) => {
 
                                 <div className={'infoBlock'}>
 
-                                    <h3>Опис</h3>
+                                    <h3><FormattedMessage id='description'/></h3>
                                     <div>
                                         <p>
                                             {overview}

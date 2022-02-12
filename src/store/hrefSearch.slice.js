@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {LOCALES} from "../i18n";
 
 
 const hrefSearchSlice = createSlice({
@@ -11,7 +12,7 @@ const hrefSearchSlice = createSlice({
             pageTv: 1,
             pagePerson: 1,
             with_genres: '',
-
+            locale: LOCALES.RUSSIAN
         },
         scrollPosition: true,
     },

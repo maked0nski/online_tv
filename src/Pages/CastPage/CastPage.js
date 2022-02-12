@@ -6,6 +6,7 @@ import {useParams} from "react-router-dom";
 import css from "./castPage.module.css";
 import {getCreditsMovieItem, getMovieItem} from "../../store";
 import {CastHeader, Person} from "../../components";
+import {FormattedMessage} from "react-intl";
 
 
 const CastPage = () => {
@@ -35,7 +36,7 @@ const CastPage = () => {
 
     return (
         <div>
-            <div><h3 className={css.castTitle}>Уся знімальна група й актори</h3></div>
+            <div><h3 className={css.castTitle}><FormattedMessage id='crewAndActors' /></h3></div>
             {status === "pending" && <h1>Data loading...</h1>}
             {error && <h2 className={'error'}>{error}</h2>}
 
@@ -45,14 +46,14 @@ const CastPage = () => {
 
 
                 <div>
-                    <h3>У ролях {credits?.cast.length}</h3>
+                    <h3><FormattedMessage id='roles' /> {credits?.cast.length}</h3>
                     <div>
                         {credits && credits.cast.map(item => <Person key={item.credit_id} item={item}/>)}
                     </div>
                 </div>
 
                 <div>
-                    <h3>Знімальна група {credits?.crew.length}</h3>
+                    <h3><FormattedMessage id='cameraCrew' /> {credits?.crew.length}</h3>
                     {credits && credits.crew.map(item => <Person key={item.credit_id} item={item}/>)}
                 </div>
 

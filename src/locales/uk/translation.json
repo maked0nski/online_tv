@@ -1,0 +1,36 @@
+{
+  "movie": "Фільми",
+  "tvShows": "Серіали",
+  "actors": "Актори",
+  "chooseLanguage": "Оберіть мову",
+  "popularMovies": "Популярні фільми",
+  "popularTv": "Популярні серіали",
+  "downloadMore" : "Завантажити більше",
+  "moreAboutTape": "Детальніше про стрічку",
+  "ratingUsers": "Оцінка користувачів",
+  "description": "Опис",
+  "starring": "У головних ролях",
+  "originalTitle": "Оригінальна назва",
+  "status": "Статус",
+  "released": "Випущений",
+  "notReleased": "Не випущений",
+  "originalLang": "Мова оригіналу",
+  "budget": "Бюджет",
+  "income": "Дохід",
+  "crewAndActors": "Уся знімальна група й актори",
+  "biography": "Біографія",
+  "personalInfo": "Особиста інформація",
+  "knownCredits": "Кількість зйомок",
+  "gender": "Стать",
+  "male": "Чоловік",
+  "female": "Жінка",
+  "birthday": "День народження",
+  "placeBirth": "Місце народження",
+  "alsoKnownAs": "Також відомий як:",
+  "acting": "Виконував ролі у фільмах:",
+
+  "descriptions": {
+    "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
+    "part2": "Switch language between english and russian using buttons above."
+  }
+}

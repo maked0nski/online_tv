@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import css from '../MainPage/mainPage.module.css';
 import {getTVList, setParams, switchScrollTVPosition} from "../../store";
 import {FilmItem} from "../../components";
+import {FormattedMessage} from "react-intl";
 
 const MainTv = () => {
 
@@ -44,7 +45,7 @@ const MainTv = () => {
 
     return (
         <div className={css.content_wrapper}>
-            <h1 className={css.title}>Популярні серіали</h1>
+            <h1 className={css.title}><FormattedMessage id='popularMovies' /></h1>
             {status === "pending" && <h1>Data loading...</h1>}
             {error && <h2 className={'error'}>{error}</h2>}
 
@@ -55,7 +56,7 @@ const MainTv = () => {
                 </div>
 
                 <div className={css.downloadMore}>
-                    <p>Завантажити більше</p>
+                    <p><FormattedMessage id='downloadMore' /></p>
                 </div>
 
             </div>
