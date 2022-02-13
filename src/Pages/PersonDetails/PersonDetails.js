@@ -51,19 +51,22 @@ const PersonDetails = () => {
                     </div>
                     <div className={css.infoBlock}>
                         <div><FormattedMessage id='placeBirth' /></div>
-                        <p>{personItem && personItem.place_of_birth}</p>
+                        <p>{personItem?.place_of_birth ? personItem.place_of_birth : <FormattedMessage id='unknown'/>}</p>
                     </div>
                     {personItem?.deathday && <div className={css.infoBlock}>
                         <div><FormattedMessage id='dateDeath' /></div>
                         <Birthday birthday={personItem.deathday}/>
                     </div>}
                     <div className={css.infoBlock}>
-                        <div><FormattedMessage id='alsoKnownAs' /></div>
-                        {personItem?.also_known_as &&
+                        {personItem?.also_known_as && <>
+                            <div>
+                                <FormattedMessage id='alsoKnownAs' />
+                            </div>
                             <ul className={css.also_known_as}>
-                                {personItem?.also_known_as.map((value, index) => <AlsoKnownAs key={index}
-                                                                                              value={value}/>)}
-                            </ul>}
+                                {personItem?.also_known_as.map((value, index) => <AlsoKnownAs key={index} value={value}/>)}
+                            </ul>
+                            </>
+                        }
                     </div>
                 </div>
             }

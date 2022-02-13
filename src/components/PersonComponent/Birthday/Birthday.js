@@ -1,13 +1,17 @@
 import React from 'react';
 import {months} from "../../../_config";
+import {FormattedMessage} from "react-intl";
 
-// import css from './'
 
 const Birthday = ({birthday}) => {
-    const date = birthday.split('-')
+    let date
+    if(birthday){
+        date= birthday.split('-')
+    }
+
     return (
         <>
-            <p>{date[2]} {months[+date[1]]} {date[0]}</p>
+            <p>{birthday ? `${date[2]} ${months[+date[1]]} ${date[0]}` : <FormattedMessage id='unknown'/>}</p>
         </>
     );
 };

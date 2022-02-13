@@ -12,10 +12,10 @@ const ListMovie = ({value}) => {
     } else nameVideo = title
 
     let year
-    if (media_type === 'movie') {
+    if (release_date) {
         year = (release_date.split('-', 1)[0] === '' ? ' невідомо ' : release_date.split('-', 1)[0])
         year = "(" + year + ")"
-    } else {
+    } else if (first_air_date){
         year = (first_air_date.split('-', 1)[0] === '' ? ' невідомо ' : first_air_date.split('-', 1)[0])
         year = "(" + year + ")"
     }

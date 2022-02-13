@@ -5,3 +5,4 @@ export * from './MovieDetails/MovieDetails';
 export * from './NotFoundPage/NotFoundPage';
 export * from './PersonDetails/PersonDetails';
 export * from './PersonsPage/PersonsPage';
+export * from './SearchPage/SearchPage';

@@ -1,0 +1,46 @@
+.content_wrapper{
+    overflow-x: hidden;
+    width: 85%;
+    margin: 0 auto;
+}
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    /*flex-wrap: wrap;*/
+}
+.left{
+    width: 25%;
+    padding: 8px 0;
+    border-radius: 8px;
+    border: solid 1px silver;
+}
+.left span{
+    background-color: #fff;
+    color: #000;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: 300;
+    font-family: 'Roboto Mono', monospace;
+    background-color: rgba(0,0,0,0.08);
+    padding: 0 10px;
+    border-radius: 8px;
+}
+.left a {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    line-height: 1.4em;
+    font-weight: 600;
+}
+
+.left a:hover{
+    color: rgba(0, 0, 0, 0.37); ;
+}
+.right{
+    width: 65%;
+    padding: 10px 20px;
+}

@@ -8,6 +8,7 @@ import {Avatar} from "@mui/material";
 import {deepPurple} from "@mui/material/colors";
 import {PopUpLanguage} from "../PopUpLanguage/PopUpLanguage";
 import {FormattedMessage} from "react-intl";
+import {SearchInput} from "../SearchInput/SearchInput";
 
 const Header = () => {
     return (
@@ -24,10 +25,10 @@ const Header = () => {
                     </div>
                     <div className={css.naw_wrapItem}>
                         <NavLink to={'/movie'}>
-                            <FormattedMessage id='movie' />
+                            <FormattedMessage id='movie'/>
                         </NavLink>
-                        <NavLink to={'/tv'}><FormattedMessage id='tvShows' /></NavLink>
-                        <NavLink to={'/person'}><FormattedMessage id='actors' /></NavLink>
+                        <NavLink to={'/tv'}><FormattedMessage id='tvShows'/></NavLink>
+                        <NavLink to={'/person'}><FormattedMessage id='actors'/></NavLink>
                     </div>
                 </div>
                 <div className={css.headerButton}>
@@ -43,8 +44,8 @@ const Header = () => {
                     <div>
                         <Avatar sx={{bgcolor: deepPurple[500]}}>EO</Avatar>
                     </div>
-                    <div className={css.search}>
-
+                    <div>
+                        <SearchInput/>
                     </div>
                 </div>
             </div>

@@ -4,8 +4,8 @@ import {LOCALES, messages} from "./i18n";
 import {useSelector} from "react-redux";
 
 import './App.css';
-import {Layout} from "./components";
-import {MainPage, MovieDetails, NotFoundPage, CastPage, MainTv, PersonsPage, PersonDetails} from "./Pages";
+import {Layout, ListSearch} from "./components";
+import {MainPage, MovieDetails, NotFoundPage, CastPage, MainTv, PersonsPage, PersonDetails, SearchPage} from "./Pages";
 
 // export function getInitialLocale() {
 //     const savedLocale = localStorage.getItem('language')
@@ -43,6 +43,10 @@ function App() {
 
                     <Route path={"person"} element={<PersonsPage/>}/>
                     <Route path={'person/:id'} element={<PersonDetails/>}/>
+
+                    <Route path={"search"} element={<SearchPage/>}>
+                        <Route path={":page"} element={<ListSearch/>}/>
+                    </Route>
 
 
                     <Route path={"*"} element={<NotFoundPage/>}/>

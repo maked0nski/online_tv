@@ -44,16 +44,17 @@ const MovieDetails = () => {
                 dispatch(getMovieItem({id, queryString}));
                 dispatch(getCreditsMovieItem({id: id + '/credits', queryString}));
                 dispatch(getTrailerMovieItem({id: id + '/videos', queryString}));
+                // dispatch(getLanguages())
                 break;
             case 'tv':
                 dispatch(getTvItem({id, queryString}));
                 dispatch(getCreditsTvItem({id: id + '/credits', queryString}));
                 dispatch(getTrailerTvItem({id: id + '/videos', queryString}));
+                // dispatch(getLanguages())
                 break;
             default:
                 break
         }
-
     }, [language])
 
 

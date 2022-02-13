@@ -34,6 +34,8 @@ export const messages = {
         acting: "Acting",
         roles: "In the roles",
         cameraCrew: "Camera crew:",
+        placeholder: "Search for a movie, TV series, man",
+        unknown: "unknown"
 
     },
     [LOCALES.UKRAINIAN]: {
@@ -69,6 +71,8 @@ export const messages = {
         acting: "Виконував ролі у фільмах:",
         roles: "У ролях",
         cameraCrew: "Знімальна група:",
+        placeholder: "Пошук фільму, серіалу, людини",
+        unknown: "Невідомо"
     },
     [LOCALES.RUSSIAN]: {
         movie: "Фильмы",
@@ -103,7 +107,8 @@ export const messages = {
         acting: "Выролнял роли в фильмах:",
         roles: "В ролях:",
         cameraCrew: "Съемочная команда:",
-
+        placeholder: "Поиск фильма, сериала, человека",
+        unknown: "Неизвестно"
     },
 
 }

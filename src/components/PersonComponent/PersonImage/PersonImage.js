@@ -1,6 +1,6 @@
 import React from 'react';
 import css from "../../../Pages/PersonDetails/personDetails.module.css";
-import {defaultImageLink, defaultPerson} from "../../../_config";
+import {defaultLinkImage, defaultPerson} from "../../../_config";
 
 // import css from './'
 
@@ -8,7 +8,7 @@ const PersonImage = ({name, profile_path}) => {
     return (
         <div className={css.image}>
             <img
-                src={defaultImageLink.w300_and_h450.concat(profile_path)}
+                src={defaultLinkImage.w300_and_h450.concat(profile_path)}
                 alt={name}
                 title={name}
                 onError={(e) => {

@@ -4,7 +4,7 @@ import {CircularProgressbar, buildStyles} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 import css from './filmItem.module.css'
-import {defaultImage, defaultImageLink} from "../../_config";
+import {defaultImage, defaultLinkImage} from "../../_config";
 
 const FilmItem = ({film}) => {
 
@@ -21,7 +21,7 @@ const FilmItem = ({film}) => {
             <div className={css.image}>
                 <Link to={id.toString()} title={title || name}>
                     <img
-                        src={defaultImageLink.w220_and_h330.concat(poster_path)}
+                        src={defaultLinkImage.w220_and_h330.concat(poster_path)}
                         alt={title || name}
                         title={title || name}
                         onError={(e) => {

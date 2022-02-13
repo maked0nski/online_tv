@@ -92,6 +92,20 @@ export const getTrailerTvItem = createAsyncThunk(
     }
 )
 
+//
+// export const getLanguages = createAsyncThunk(
+//     'movieSlice/getLanguages',
+//     async (_, {rejectWithValue}) => {
+//         try {
+//             console.log('11')
+//             return await movieService.getLanguagesList();
+//         } catch (e) {
+//             rejectWithValue(e.message);
+//         }
+//     }
+// )
+
+
 
 const movieSlice = createSlice({
     name: 'movieSlice',
@@ -105,7 +119,8 @@ const movieSlice = createSlice({
         error: null,
         status: null,
         scrollPosition: true,
-        scrollTVPosition: true
+        scrollTVPosition: true,
+        // languages: []
     },
     reducers: {
         addMovieElement: (state, action) => {
@@ -128,6 +143,7 @@ const movieSlice = createSlice({
             state.movieList = [...state.movieList, ...action.payload.results];
             state.error = null;
         },
+
         [getMovieList.rejected]: (state, action) => {
             state.status = 'rejected';
             state.error = action.payload;
@@ -237,7 +253,15 @@ const movieSlice = createSlice({
         [getTrailerTvItem.rejected]: (state, action) => {
             state.status = 'rejected';
             state.error = action.payload;
-        }
+        },
+
+
+        // [getLanguages.fulfilled]: (state, action) => {
+        //     state.status = 'fulfilled';
+        //     state.languages = [...state.languages, ...action.payload];
+        //     console.log(state.languages)
+        //     state.error = null;
+        // }
     }
 })
 

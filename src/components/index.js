@@ -12,7 +12,10 @@ export * from './PopUpLanguage/PopUpLanguage';
 export * from './VideoFrame/VideoFrame';
 export * from './PersonComponent/PersonImage/PersonImage';
 export * from './SocialLinks/SocialLinks';
+export * from './SearchResult/SearchResult';
 export * from './PersonComponent/Birthday/Birthday';
 export * from './PersonComponent/AlsoKnownAs/AlsoKnownAs';
 export * from './ListMovie/ListMovie';
+export * from './ListSearch/ListSearch';
+export * from './List/List';
 

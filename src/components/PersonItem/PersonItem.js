@@ -1,8 +1,8 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 import css from './personItem.module.css'
-import {defaultImageLink, defaultPerson} from "../../_config";
-import {Link} from "react-router-dom";
+import {defaultLinkImage, defaultPerson} from "../../_config";
 
 const PersonItem = ({item}) => {
 
@@ -12,7 +12,7 @@ const PersonItem = ({item}) => {
                 <div className={css.image}>
                     <Link to={item.id.toString()}>
                         <img
-                            src={defaultImageLink.w235_and_h235.concat(item.profile_path)}
+                            src={defaultLinkImage.w235_and_h235.concat(item.profile_path)}
                             onError={(e) => {
                                 e.target.onerror = null;
                                 e.target.src = defaultPerson

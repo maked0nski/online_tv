@@ -1,0 +1,27 @@
+.search {
+    width: 29px;
+    height: 29px;
+    background-image: url(https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1.svg);
+}
+.searchPopUp{
+    left: 0 !important;
+}
+.popup-content{
+    background: black;
+}
+.popupContainer {
+    left: 0;
+    background: rgb(255, 255, 255);
+    width: 90vh;
+    padding: 0;
+    margin: 0;
+}
+.popupContainer input{
+    height: 25px;
+    margin: 10px;
+    width: 100%;
+}
+.popupContainer form{
+    margin: 10px;
+    width: 100%;
+}

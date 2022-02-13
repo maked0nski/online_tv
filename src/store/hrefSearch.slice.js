@@ -12,7 +12,8 @@ const hrefSearchSlice = createSlice({
             pageTv: 1,
             pagePerson: 1,
             with_genres: '',
-            locale: LOCALES.RUSSIAN
+            locale: LOCALES.RUSSIAN,
+            query: null
         },
         scrollPosition: true,
     },
