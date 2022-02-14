@@ -2,7 +2,15 @@
     position: absolute;
     margin-top: 64px;
     overflow: hidden;
+    color: var(--text-primary);
+    background-color: var(--background);
+}
+a{
+    color: var(--text-primary);
+}
+a:hover{
+    color: var(--link-primary-hover);
 }
 .container{
-
+background-color: var(--background);
 }

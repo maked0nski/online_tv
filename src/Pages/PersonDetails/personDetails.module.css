@@ -2,7 +2,9 @@
     display: flex;
     width: 85%;
     margin: 0 auto;
+    margin-top: 50px;
     padding-block: 30px;
+    color: var(--text-primary);
 }
 .leftwrap{
     min-width: 300px;

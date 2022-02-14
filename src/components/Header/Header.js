@@ -1,16 +1,15 @@
 import React from 'react';
 import Badge from '@mui/material/Badge';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import {FormattedMessage} from "react-intl";
+import {NavLink} from "react-router-dom";
+import {Avatar, Switch} from "@mui/material";
 
 import css from './header.module.css'
-import {NavLink} from "react-router-dom";
-import {Avatar} from "@mui/material";
-import {deepPurple} from "@mui/material/colors";
 import {PopUpLanguage} from "../PopUpLanguage/PopUpLanguage";
-import {FormattedMessage} from "react-intl";
 import {SearchInput} from "../SearchInput/SearchInput";
 
-const Header = () => {
+const Header = ({switchTheme, checked}) => {
     return (
         <div className={css.header}>
             <div className={css.headerContainer}>
@@ -42,7 +41,16 @@ const Header = () => {
 
                     </div>
                     <div>
-                        <Avatar sx={{bgcolor: deepPurple[500]}}>EO</Avatar>
+                        <Avatar sx={{bgcolor: 'var(--header-button)', color: `var(--text-secondary)` }}>EO</Avatar>
+                    </div>
+                    <div>
+
+                        <Switch
+                            checked={checked}
+                            onChange={switchTheme}
+                            inputProps={{'aria-label': 'controlled'}}
+                        />
+                        <div className={css.switch}>{checked ? 'Dark' : 'Light'}</div>
                     </div>
                     <div>
                         <SearchInput/>

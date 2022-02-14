@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden !important;
+
 }
 #popup-root{
   width: 95vh !important;
@@ -19,26 +20,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/*color: var(--header-background);*/
+
 :root {
   --background: white;
   --text-primary: black;
   --text-secondary: white;
+  --link-primary: white;
+  --link-primary-hover: rgba(35, 33, 33, 0.7);
   --accent: purple;
-  --tmdbDarkBlue: 3,37,65;
+  --header-background: #032541;
+  --header-button: #673AB7;
   --accountLightBlue: 1,180,228;
+  --box-shadow: rgba(0, 0, 0, 0.2);
+  --border-color: #e3e3e3
 
 }
 [data-theme='dark'] {
   --background: black;
   --text-primary: white;
   --text-secondary: grey;
+  --link-primary: black;
+  --link-primary-hover: rgba(236, 227, 227, 0.7);
   --accent: darkred;
+  --header-background: #032541;
+  --header-button: #673AB7;
+  --box-shadow: rgba(255, 255, 255, 0.2);
+  --border-color: #363535
 }
 
 a {
   text-decoration: none !important;
   font-weight: normal;
   background: transparent;
+
 }
 a:hover{
   color: rgba(255,255,255,0.7);

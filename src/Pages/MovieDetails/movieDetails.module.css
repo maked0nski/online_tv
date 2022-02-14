@@ -1,5 +1,10 @@
 .movieDetails {
+    color: var(--text-primary);
 
+}
+
+h3 {
+    color: var(--text-primary);
 }
 
 .movieDetailsTitle {
@@ -41,7 +46,7 @@
 }
 
 .actors, .allActors a:hover {
-    color: rgba(0, 0, 0, 0.37);
+    color: var(--link-primary-hover);
 }
 
 .social_links {
@@ -59,24 +64,10 @@
 }
 
 .social_links span {
-    /*margin-right: 10px;*/
-    /*position: relative;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*display: inline-flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
-    /*min-width: 2em;*/
-    /*min-height: 2em;*/
-    /*width: 2em;*/
-    /*height: 2em;*/
-    /*line-height: inherit;*/
-    /*background-position: center center;*/
-    /*background-repeat: no-repeat;*/
-    /*color: inherit;*/
-    /*box-sizing: border-box;*/
+
 }
 
 .videoPlayer {
     width: 100%;
+    margin-bottom: 30px;
 }
