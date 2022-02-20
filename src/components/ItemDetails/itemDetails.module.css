@@ -59,10 +59,15 @@ li{
 }
 .genres a{
     margin-left: 5px;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+.genres a:hover{
+    margin-left: 5px;
+    color: var(--link-primary1-hover);
 }
 .titleBlock{
     margin-bottom: 24px;
-
 }
 .titleBlock h2{
     font-weight: 700;
@@ -96,7 +101,7 @@ li{
 }
 .toolBtnCircle{
     box-sizing: border-box;
-    background: rgba(var(--tmdbDarkBlue), 1);
+    background: rgba(3,37,65, 1);
     border-radius: 50%;
     width: 46px;
     height: 46px;
@@ -160,7 +165,9 @@ li{
     font-size: 1.4em;
 }
 
-
+.infoBlock h3{
+    color: var(--text-secondary);
+}
 .people_name{
 
 }

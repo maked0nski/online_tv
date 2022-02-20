@@ -1,16 +1,22 @@
-.layout{
+.layout {
     position: absolute;
-    margin-top: 64px;
+    /*margin-top: 64px;*/
     overflow: hidden;
     color: var(--text-primary);
     background-color: var(--background);
 }
-a{
+
+a {
     color: var(--text-primary);
 }
-a:hover{
+
+a:hover {
     color: var(--link-primary-hover);
 }
-.container{
-background-color: var(--background);
+
+.container {
+    background-color: var(--background);
+    margin-top: 64px;
+    color: var(--text-primary);
+    padding-top: 10px;
 }

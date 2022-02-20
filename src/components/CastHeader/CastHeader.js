@@ -1,7 +1,7 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 import css from './castHeader.module.css'
-import {Link} from "react-router-dom";
 
 const CastHeader = ({movieItemDetails: {poster_path, title, release_date}}) => {
 

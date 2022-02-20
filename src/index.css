@@ -27,6 +27,7 @@ code {
   --text-primary: black;
   --text-secondary: white;
   --link-primary: white;
+  --link-primary1-hover: #bdbcbc;
   --link-primary-hover: rgba(35, 33, 33, 0.7);
   --accent: purple;
   --header-background: #032541;
@@ -41,6 +42,7 @@ code {
   --text-primary: white;
   --text-secondary: grey;
   --link-primary: black;
+  --link-primary1-hover: grey;
   --link-primary-hover: rgba(236, 227, 227, 0.7);
   --accent: darkred;
   --header-background: #032541;

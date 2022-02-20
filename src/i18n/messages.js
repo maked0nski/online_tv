@@ -35,7 +35,8 @@ export const messages = {
         roles: "In the roles",
         cameraCrew: "Camera crew:",
         placeholder: "Search for a movie, TV series, man",
-        unknown: "unknown"
+        unknown: "unknown",
+        error404: "Grats. You broke it.",
 
     },
     [LOCALES.UKRAINIAN]: {
@@ -47,7 +48,7 @@ export const messages = {
         popularTv: "Популярні серіали",
         downloadMore: "Завантажити більше",
         moreAboutTape: "Детальніше про стрічку",
-        ratingUsers: "Оцінка <br/> користувачів",
+        ratingUsers: "Оцінка користувачів",
         description: "Опис",
         starring: "У головних ролях",
         originalTitle: "Оригінальна назва",
@@ -72,7 +73,9 @@ export const messages = {
         roles: "У ролях",
         cameraCrew: "Знімальна група:",
         placeholder: "Пошук фільму, серіалу, людини",
-        unknown: "Невідомо"
+        unknown: "Невідомо",
+        error404: "Вітаю! Ви поломали це :(",
+
     },
     [LOCALES.RUSSIAN]: {
         movie: "Фильмы",
@@ -108,7 +111,7 @@ export const messages = {
         roles: "В ролях:",
         cameraCrew: "Съемочная команда:",
         placeholder: "Поиск фильма, сериала, человека",
-        unknown: "Неизвестно"
+        unknown: "Неизвестно",
+        error404: "Поздравляю! Вы поломали это :(",
     },
-
 }

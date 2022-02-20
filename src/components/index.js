@@ -6,16 +6,16 @@ export * from './Genres/Genres';
 export * from './Header/Header';
 export * from './ItemDetails/ItemDetails';
 export * from './Layout/Layout';
-export * from './Person/Person';
-export * from './PersonItem/PersonItem';
-export * from './PopUpLanguage/PopUpLanguage';
-export * from './VideoFrame/VideoFrame';
-export * from './PersonComponent/PersonImage/PersonImage';
-export * from './SocialLinks/SocialLinks';
-export * from './SearchResult/SearchResult';
-export * from './PersonComponent/Birthday/Birthday';
-export * from './PersonComponent/AlsoKnownAs/AlsoKnownAs';
+export * from './List/List';
 export * from './ListMovie/ListMovie';
 export * from './ListSearch/ListSearch';
-export * from './List/List';
-
+export * from './Person/Person';
+export * from './PersonComponent/Birthday/Birthday';
+export * from './PersonComponent/AlsoKnownAs/AlsoKnownAs';
+export * from './PersonComponent/PersonImage/PersonImage';
+export * from './PersonItem/PersonItem';
+export * from './PopUpLanguage/PopUpLanguage';
+export * from './SearchInput/SearchInput'
+export * from './SearchResult/SearchResult';
+export * from './SocialLinks/SocialLinks';
+export * from './VideoFrame/VideoFrame';

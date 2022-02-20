@@ -1,11 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import {buildStyles, CircularProgressbar} from "react-circular-progressbar";
+import {FormattedMessage} from "react-intl";
 
 import css from "./itemDetails.module.css";
-import {Genres} from "../Genres/Genres";
-import {buildStyles, CircularProgressbar} from "react-circular-progressbar";
 import {defaultImage} from "../../_config";
-import {FormattedMessage} from "react-intl";
+import {Genres} from "../Genres/Genres";
+
 
 
 const ItemDetails = ({movieItemDetails}) => {
@@ -112,7 +113,7 @@ const ItemDetails = ({movieItemDetails}) => {
 
                                 </ul>
 
-                                <div className={'infoBlock'}>
+                                <div className={css.infoBlock}>
 
                                     <h3><FormattedMessage id='description'/></h3>
                                     <div>

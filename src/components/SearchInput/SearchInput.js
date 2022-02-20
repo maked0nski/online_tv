@@ -1,12 +1,14 @@
 import React, {useRef} from 'react';
 import Popup from 'reactjs-popup';
 import styled from 'styled-components';
-
-import css from './searchInput.module.css'
-import {setParams} from "../../store";
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
+
+import css from './searchInput.module.css';
+import {setParams} from "../../store";
+import {FormattedMessage} from "react-intl";
+
 
 const StyledPopup = styled(Popup)`
   // use your custom style for ".popup-overlay"
@@ -54,8 +56,11 @@ const SearchInput = () => {
         >
             <div className={css.popupContainer} style={{padding: '10px'}}>
                 <form onSubmit={handleSubmit(onSubmit)}>
-
-                    <input {...register('query')} placeholder={`Пошук фільму, серіалу, людини`}/>
+                    {/*<FormattedMessage id='placeholder'/>*/}
+                    <FormattedMessage id={'placeholder'} defaultMessage={'search'}>
+                        {placeholder => <input {...register('query')} placeholder={placeholder}/>}
+                    </FormattedMessage>
+                    {/*<input {...register('query')} placeholder={'dhsf'}/>*/}
 
                 </form>
             </div>

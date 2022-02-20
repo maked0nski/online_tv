@@ -39,7 +39,7 @@ const PersonDetails = () => {
                     </div>
                     <div className={css.infoBlock}>
                         <div><FormattedMessage id='knownCredits' /></div>
-                        {combined_credits && <p>{combined_credits.cast.length}</p>}
+                        {combined_credits && <p>{combined_credits?.cast.length}</p>}
                     </div>
                     <div className={css.infoBlock}>
                         <div><FormattedMessage id='gender' /></div>
